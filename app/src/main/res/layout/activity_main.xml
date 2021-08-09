@@ -8,12 +8,12 @@
     android:background="#000000"
     tools:context=".MainActivity">
 
-    <com.airbnb.lottie.LottieAnimationView
-        android:layout_width="300dp"
-        android:layout_height="300dp"
-        app:lottie_rawRes="@raw/dice"
-        app:lottie_autoPlay="true"
-        app:lottie_loop="true"
+    <Button
+        android:id="@+id/start"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="전송"
+        android:background="#ffffff"
         />
 
 
