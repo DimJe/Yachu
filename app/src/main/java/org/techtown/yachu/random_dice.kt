@@ -15,11 +15,11 @@ class random_dice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_dice)
         Handler().postDelayed({
-            var arr  = arrayListOf<Int>()
+            var arr  = arrayListOf<Int>(0,0,0,0,0,0)
             for (i in 1..5){
                 val random = Random()
                 val x = random.nextInt(6) + 1
-                arr.add(x)
+                arr[x]++
                 Log.d(TAG, "random: $x")
             }
             val intent = Intent(this,MainActivity::class.java)

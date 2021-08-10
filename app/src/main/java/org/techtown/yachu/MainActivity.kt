@@ -9,6 +9,7 @@ import android.widget.Button
 class MainActivity : AppCompatActivity() {
     val TAG: String = "로그"
     override fun onCreate(savedInstanceState: Bundle?) {
+        setTheme(R.style.Theme_Yachu)
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -26,6 +27,7 @@ class MainActivity : AppCompatActivity() {
         var arr = data?.getIntegerArrayListExtra("arr")
         for (i in arr!!){
             Log.d(TAG, "onActivityResult: $i")
+
         }
         super.onActivityResult(requestCode, resultCode, data)
     }
