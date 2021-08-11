@@ -19,6 +19,7 @@ class Player {
     var L_straight = 0
     var Yacht = 0
     var total = 0
+
     fun cal(arr:ArrayList<Int>){
 
     }
