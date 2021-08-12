@@ -16,19 +16,21 @@ class MainActivity : AppCompatActivity() {
         val start : Button = findViewById(R.id.start)
         start.setOnClickListener {
             Log.d(TAG, "onCreate: start-clicked")
-            val intent = Intent(this,random_dice::class.java)
-            startActivityForResult(intent,200)
+            val intent = Intent(this,Introduce_rule::class.java)
+//            startActivityForResult(intent,200)
+            startActivity(intent)
+            finish()
         }
 
 
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        var arr = data?.getIntegerArrayListExtra("arr")
-        for (i in arr!!){
-            Log.d(TAG, "onActivityResult: $i")
-
-        }
-        super.onActivityResult(requestCode, resultCode, data)
-    }
+//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+//        var arr = data?.getIntegerArrayListExtra("arr")
+//        for (i in arr!!){
+//            Log.d(TAG, "onActivityResult: $i")
+//
+//        }
+//        super.onActivityResult(requestCode, resultCode, data)
+//    }
 }

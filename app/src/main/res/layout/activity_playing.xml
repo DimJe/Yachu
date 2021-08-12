@@ -1,9 +1,229 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:weightSum="5"
     tools:context=".Playing">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="6"
+            android:stretchColumns="1">
+
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Ace"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Deuces"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Threes"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Fours"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Fives"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Sixes"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:weightSum="6"
+            android:stretchColumns="0,1"
+            >
+
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Choice"
+                    android:textSize="15dp"
+                    />
+                <TextView
+                    android:text="50"
+                    android:textSize="50dp"
+                    android:layout_height="match_parent"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="4 of a kind"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Full House"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="S_Straight"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="L_Straight"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+            <TableRow android:layout_weight="1">
+
+                <TextView
+                    android:text="Yacht"
+                    />
+                <TextView
+                    android:text="two"
+                    android:gravity="right"
+                    />
+
+            </TableRow>
+
+        </TableLayout>
+
+        <TableLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1">
+
+        </TableLayout>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.5"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <ImageView
+
+            android:id="@+id/first"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/dice_2" />
+
+        <ImageView
+            android:id="@+id/second"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/dice_3" />
+
+        <ImageView
+            android:id="@+id/third"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/dice_4" />
+
+        <ImageView
+            android:id="@+id/forth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/dice_5" />
+
+        <ImageView
+            android:id="@+id/fifth"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:src="@drawable/dice_6" />
+
+    </LinearLayout>
+
+
+</LinearLayout>
