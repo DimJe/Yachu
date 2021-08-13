@@ -9,6 +9,7 @@
     tools:context=".Playing">
 
     <LinearLayout
+        android:id="@+id/table"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="3"
@@ -19,73 +20,79 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:weightSum="6"
-            android:stretchColumns="1">
+            android:stretchColumns="1"
+            android:weightSum="6">
 
-            <TableRow android:layout_weight="1">
+            <TableRow
+                android:id="@+id/Ace"
+                android:layout_weight="1">
+
+                <TextView android:text="Ace" />
 
                 <TextView
-                    android:text="Ace"
-                    />
-                <TextView
-                    android:text="two"
+                    android:id="@+id/ddd"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Deuces"
+                android:layout_weight="1">
+
+                <TextView android:text="Deuces" />
 
                 <TextView
-                    android:text="Deuces"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Threes"
+                android:layout_weight="1">
+
+                <TextView android:text="Threes" />
 
                 <TextView
-                    android:text="Threes"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Fours"
+                android:layout_weight="1">
+
+                <TextView android:text="Fours" />
 
                 <TextView
-                    android:text="Fours"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Fives"
+                android:layout_weight="1">
+
+                <TextView android:text="Fives" />
 
                 <TextView
-                    android:text="Fives"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Sixes"
+                android:layout_weight="1">
+
+                <TextView android:text="Sixes" />
 
                 <TextView
-                    android:text="Sixes"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
 
@@ -95,76 +102,81 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:weightSum="6"
-            android:stretchColumns="0,1"
-            >
+            android:stretchColumns="1"
+            android:weightSum="6">
 
-            <TableRow android:layout_weight="1">
+            <TableRow
+                android:id="@+id/Choice"
+                android:layout_weight="1">
 
                 <TextView
                     android:text="Choice"
-                    android:textSize="15dp"
-                    />
+                    android:textSize="15dp" />
+
                 <TextView
+                    android:gravity="right"
                     android:text="50"
-                    android:textSize="50dp"
-                    android:layout_height="match_parent"
-                    />
+                    android:textSize="15dp" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Four_of_a_kind"
+                android:layout_weight="1">
+
+                <TextView android:text="4 of a kind" />
 
                 <TextView
-                    android:text="4 of a kind"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Full_House"
+                android:layout_weight="1">
+
+                <TextView android:text="Full House" />
 
                 <TextView
-                    android:text="Full House"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/S_Straight"
+                android:layout_weight="1">
+
+                <TextView android:text="S_Straight" />
 
                 <TextView
-                    android:text="S_Straight"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/L_Straight"
+                android:layout_weight="1">
+
+                <TextView android:text="L_Straight" />
 
                 <TextView
-                    android:text="L_Straight"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
-            <TableRow android:layout_weight="1">
+
+            <TableRow
+                android:id="@+id/Yacht"
+                android:layout_weight="1">
+
+                <TextView android:text="Yacht" />
 
                 <TextView
-                    android:text="Yacht"
-                    />
-                <TextView
-                    android:text="two"
                     android:gravity="right"
-                    />
+                    android:text="two" />
 
             </TableRow>
 
@@ -222,6 +234,32 @@
             android:layout_height="match_parent"
             android:layout_weight="1"
             android:src="@drawable/dice_6" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2"
+        android:layout_margin="15dp">
+
+        <Button
+            android:id="@+id/ReRoll"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="ReRoll"
+            android:layout_marginRight="5dp"/>
+
+        <Button
+            android:id="@+id/Done"
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="Done"
+            android:layout_marginLeft="5dp"/>
 
     </LinearLayout>
 
