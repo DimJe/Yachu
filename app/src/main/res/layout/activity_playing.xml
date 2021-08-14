@@ -8,6 +8,16 @@
     android:weightSum="5"
     tools:context=".Playing">
 
+    <TextView
+        android:id="@+id/Player"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"
+        android:text="Player"
+        android:textSize="20dp"
+        android:gravity="center"
+        />
+
     <LinearLayout
         android:id="@+id/table"
         android:layout_width="match_parent"
@@ -15,6 +25,7 @@
         android:layout_weight="3"
         android:orientation="horizontal"
         android:weightSum="2">
+
 
         <TableLayout
             android:layout_width="0dp"
@@ -182,13 +193,6 @@
 
         </TableLayout>
 
-        <TableLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="1">
-
-        </TableLayout>
-
 
     </LinearLayout>
 
@@ -205,35 +209,35 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/dice_2" />
+            android:src="" />
 
         <ImageView
             android:id="@+id/second"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/dice_3" />
+            android:src="" />
 
         <ImageView
             android:id="@+id/third"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/dice_4" />
+            android:src="" />
 
         <ImageView
             android:id="@+id/forth"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/dice_5" />
+            android:src="" />
 
         <ImageView
             android:id="@+id/fifth"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="@drawable/dice_6" />
+            android:src="" />
 
     </LinearLayout>
 
@@ -262,6 +266,15 @@
             android:layout_marginLeft="5dp"/>
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0.2"
+        android:gravity="center"
+        android:text="남은 기회 : 2"
+        android:textStyle="bold"
+        />
 
 
 </LinearLayout>

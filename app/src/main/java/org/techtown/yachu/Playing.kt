@@ -1,18 +1,21 @@
 package org.techtown.yachu
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.LinearLayout
-import android.widget.TableRow
-import android.widget.TextView
+import android.widget.*
 import androidx.core.view.children
 import androidx.core.view.get
 
 class Playing : AppCompatActivity() {
+    var ImageView_list = arrayListOf<ImageView>()
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playing)
+
+        val Player1 : String? = intent.getStringExtra("player1")
+        val Player2 : String? = intent.getStringExtra("player2")
+
 
         val first : ImageView = findViewById(R.id.first)
         val second : ImageView = findViewById(R.id.second)
@@ -21,7 +24,7 @@ class Playing : AppCompatActivity() {
         val fifth : ImageView = findViewById(R.id.fifth)
 
         var clicked_list = mutableListOf<Boolean>(false,false,false,false,false)
-        var ImageView_list = arrayListOf<ImageView>(first,second,third,forth,fifth)
+        ImageView_list = arrayListOf<ImageView>(first,second,third,forth,fifth)
 
         val table : LinearLayout = findViewById(R.id.table)
         val Ace : TableRow = findViewById(R.id.Ace)
@@ -39,7 +42,8 @@ class Playing : AppCompatActivity() {
 
         var Table_list = arrayListOf<TableRow>(Ace,Deuces,Threes,Fours,Fives,Sixes,Choice,Four_of_a_kind,Full_House,S_Straight,L_Straight,Yacht)
 
-
+        val ReRoll : Button = findViewById(R.id.ReRoll)
+        val Done : Button = findViewById(R.id.Done)
 
         for (i in 0..4){
             ImageView_list[i].setOnClickListener {
@@ -54,5 +58,33 @@ class Playing : AppCompatActivity() {
             }
         }
 
+        ReRoll.setOnClickListener {
+            val intent = Intent(this, random_dice::class.java).apply {
+                startActivityForResult(this,10)
+            }
+        }
+
+    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+
+        var arr = data?.getIntegerArrayListExtra("arr")
+        var index : Int = 0
+        for (i in 0..4){
+            if(arr!![i]==0) continue
+            else{
+                for (j in 0..arr!![i]){
+                    when(i){
+                        1 -> ImageView_list[index++].setImageResource(R.drawable.dice_1)
+                        2 -> ImageView_list[index++].setImageResource(R.drawable.dice_2)
+                        3 -> ImageView_list[index++].setImageResource(R.drawable.dice_3)
+                        4 -> ImageView_list[index++].setImageResource(R.drawable.dice_4)
+                        5 -> ImageView_list[index++].setImageResource(R.drawable.dice_5)
+                        6 -> ImageView_list[index++].setImageResource(R.drawable.dice_6)
+
+                    }
+                }
+            }
+        }
+        super.onActivityResult(requestCode, resultCode, data)
     }
 }
