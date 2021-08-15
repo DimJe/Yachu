@@ -209,35 +209,35 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="" />
+             />
 
         <ImageView
             android:id="@+id/second"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="" />
+             />
 
         <ImageView
             android:id="@+id/third"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="" />
+             />
 
         <ImageView
             android:id="@+id/forth"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="" />
+             />
 
         <ImageView
             android:id="@+id/fifth"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            android:src="" />
+             />
 
     </LinearLayout>
 

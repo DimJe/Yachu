@@ -3,12 +3,14 @@ package org.techtown.yachu
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.*
 import androidx.core.view.children
 import androidx.core.view.get
 
 class Playing : AppCompatActivity() {
     var ImageView_list = arrayListOf<ImageView>()
+    val TAG: String = "로그"
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playing)
@@ -66,13 +68,15 @@ class Playing : AppCompatActivity() {
 
     }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        Log.d(TAG, "onActivityResult: called")
 
         var arr = data?.getIntegerArrayListExtra("arr")
         var index : Int = 0
-        for (i in 0..4){
+        for (i in 1..6){
             if(arr!![i]==0) continue
             else{
-                for (j in 0..arr!![i]){
+                for (j in 1..arr!![i]){
                     when(i){
                         1 -> ImageView_list[index++].setImageResource(R.drawable.dice_1)
                         2 -> ImageView_list[index++].setImageResource(R.drawable.dice_2)
@@ -80,11 +84,9 @@ class Playing : AppCompatActivity() {
                         4 -> ImageView_list[index++].setImageResource(R.drawable.dice_4)
                         5 -> ImageView_list[index++].setImageResource(R.drawable.dice_5)
                         6 -> ImageView_list[index++].setImageResource(R.drawable.dice_6)
-
                     }
                 }
             }
         }
-        super.onActivityResult(requestCode, resultCode, data)
     }
 }
