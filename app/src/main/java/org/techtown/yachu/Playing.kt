@@ -11,12 +11,18 @@ import androidx.core.view.get
 class Playing : AppCompatActivity() {
     var ImageView_list = arrayListOf<ImageView>()
     val TAG: String = "로그"
+    lateinit var ReRoll : Button
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_playing)
 
+        Log.d(TAG, "onCreate: called")
+
         val Player1 : String? = intent.getStringExtra("player1")
         val Player2 : String? = intent.getStringExtra("player2")
+        val _player : TextView = findViewById(R.id.Player)
+        val times : TextView = findViewById(R.id.time)
+        var turn : Boolean = true
 
 
         val first : ImageView = findViewById(R.id.first)
@@ -44,8 +50,14 @@ class Playing : AppCompatActivity() {
 
         var Table_list = arrayListOf<TableRow>(Ace,Deuces,Threes,Fours,Fives,Sixes,Choice,Four_of_a_kind,Full_House,S_Straight,L_Straight,Yacht)
 
-        val ReRoll : Button = findViewById(R.id.ReRoll)
+        ReRoll = findViewById(R.id.ReRoll)
         val Done : Button = findViewById(R.id.Done)
+
+        var Roll_count : Int = 2
+        times.setText(times.text.toString() + Roll_count.toString())
+
+        if(turn) _player.text = Player1
+        else _player.text = Player2
 
         for (i in 0..4){
             ImageView_list[i].setOnClickListener {
@@ -61,15 +73,37 @@ class Playing : AppCompatActivity() {
         }
 
         ReRoll.setOnClickListener {
-            val intent = Intent(this, random_dice::class.java).apply {
-                startActivityForResult(this,10)
+            if (Roll_count>0){
+                val intent = Intent(this, random_dice::class.java).apply {
+                    startActivityForResult(this,10)
+                }
+                Log.d(TAG, "onCreate: reroll-called")
+                Roll_count--
+                times.setText("남은 기회 : ${Roll_count}")
+                ReRoll.isEnabled = false
+            }
+            else{
+                Log.d(TAG, "onCreate: toast-massage called")
+                Toast.makeText(this, "남은 기회가 없습니다!", Toast.LENGTH_SHORT).show()
             }
         }
 
     }
+
+    override fun onStop() {
+        super.onStop()
+        Log.d(TAG, "onStop: called")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.d(TAG, "onRestart: called")
+    }
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         Log.d(TAG, "onActivityResult: called")
+
+        ReRoll.isEnabled = true
 
         var arr = data?.getIntegerArrayListExtra("arr")
         var index : Int = 0
