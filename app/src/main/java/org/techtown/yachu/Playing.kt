@@ -1,6 +1,7 @@
 package org.techtown.yachu
 
 import android.content.Intent
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -74,7 +75,18 @@ class Playing : AppCompatActivity() {
 
         ReRoll.setOnClickListener {
             if (Roll_count>0){
+                var arr = arrayListOf<Int>(0,0,0,0,0,0,0)
+                var Request_count : Int = 5
+                for (i in 0..4){
+                    if (!clicked_list[i]){
+                        val index : Int = ImageView_list[i].getTag().toString().toInt()
+                        arr[index]++
+                    }
+                    else Request_count--
+                }
                 val intent = Intent(this, random_dice::class.java).apply {
+                    this.putIntegerArrayListExtra("arr",arr)
+                    this.putExtra("request",Request_count)
                     startActivityForResult(this,10)
                 }
                 Log.d(TAG, "onCreate: reroll-called")
@@ -112,12 +124,36 @@ class Playing : AppCompatActivity() {
             else{
                 for (j in 1..arr!![i]){
                     when(i){
-                        1 -> ImageView_list[index++].setImageResource(R.drawable.dice_1)
-                        2 -> ImageView_list[index++].setImageResource(R.drawable.dice_2)
-                        3 -> ImageView_list[index++].setImageResource(R.drawable.dice_3)
-                        4 -> ImageView_list[index++].setImageResource(R.drawable.dice_4)
-                        5 -> ImageView_list[index++].setImageResource(R.drawable.dice_5)
-                        6 -> ImageView_list[index++].setImageResource(R.drawable.dice_6)
+                        1 -> {
+                            ImageView_list[index].setImageResource(R.drawable.dice_1)
+                            ImageView_list[index].setTag(1)
+                            index++
+                        }
+                        2 -> {
+                            ImageView_list[index].setImageResource(R.drawable.dice_2)
+                            ImageView_list[index].setTag(2)
+                            index++
+                        }
+                        3 -> {
+                            ImageView_list[index].setImageResource(R.drawable.dice_3)
+                            ImageView_list[index].setTag(3)
+                            index++
+                        }
+                        4 -> {
+                            ImageView_list[index].setImageResource(R.drawable.dice_4)
+                            ImageView_list[index].setTag(4)
+                            index++
+                        }
+                        5 -> {
+                            ImageView_list[index].setImageResource(R.drawable.dice_5)
+                            ImageView_list[index].setTag(5)
+                            index++
+                        }
+                        6 -> {
+                            ImageView_list[index].setImageResource(R.drawable.dice_6)
+                            ImageView_list[index].setTag(6)
+                            index++
+                        }
                     }
                 }
             }
