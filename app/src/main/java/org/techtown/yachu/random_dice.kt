@@ -15,8 +15,11 @@ class random_dice : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_random_dice)
         Handler().postDelayed({
-            var arr  = intent.getIntegerArrayListExtra("arr")
-            Log.d(TAG, "request array: ${arr!![0]} ")
+            val arr : IntArray? = intent.getIntArrayExtra("arr")
+            Log.d(TAG, " size:${arr!!.size} ")
+            arr!!.forEachIndexed { index, i ->
+                Log.d(TAG, "index: $index , value : $i ")
+            }
             val Request_count :Int = intent.getIntExtra("request",5)
             Log.d(TAG, "count: $Request_count ")
             for (i in 0 until Request_count){
@@ -26,7 +29,7 @@ class random_dice : AppCompatActivity() {
                 Log.d(TAG, "random: $x")
             }
             val intent = Intent(this,MainActivity::class.java)
-            intent.putIntegerArrayListExtra("arr",arr!!)
+            intent.putExtra("arr",arr)
             setResult(Activity.RESULT_OK,intent)
             finish()
         },5000)

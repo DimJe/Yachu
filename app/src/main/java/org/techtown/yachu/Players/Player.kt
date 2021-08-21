@@ -1,4 +1,4 @@
-package org.techtown.yachu
+package org.techtown.yachu.Players
 
 class Player {
     constructor(name: String) {
