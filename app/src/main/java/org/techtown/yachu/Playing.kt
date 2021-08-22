@@ -1,6 +1,8 @@
 package org.techtown.yachu
 
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -29,7 +31,7 @@ class Playing : AppCompatActivity() {
         var Player1 = Player(Player1_Name!!)
         var Player2 = Player(Player2_Name!!)
         player = Player1
-        Player1.Ace = 5
+        var next : Boolean = false
 
         val _player: TextView = findViewById(R.id.Player)
         val times: TextView = findViewById(R.id.time)
@@ -59,8 +61,6 @@ class Playing : AppCompatActivity() {
         val L_Straight: TableRow = findViewById(R.id.L_Straight)
         val Yacht: TableRow = findViewById(R.id.Yacht)
 
-        val text : TextView = Ace.getChildAt(1) as TextView
-        text.setText("1111")
 
         var Table_list = arrayListOf<TableRow>(
             Ace,
@@ -76,9 +76,23 @@ class Playing : AppCompatActivity() {
             L_Straight,
             Yacht
         )
+        for(i in Table_list){
+            i.setOnClickListener {
+                for(j in Table_list){
+                    val color : ColorDrawable = j.background as ColorDrawable
+                    if(color.color != Color.rgb(255,255,255)){
+                        j.setBackgroundColor(Color.rgb(255,255,255))
+                        break;
+                    }
+                }
+                i.setBackgroundColor(Color.rgb(142,142,142))
+                Log.d(TAG, "tablerow")
+            }
+        }
 
         ReRoll = findViewById(R.id.ReRoll)
         val Done: Button = findViewById(R.id.Done)
+        Change_Player.change(_player,player,Table_list)
 
         var Roll_count: Int = 2
         times.text = times.text.toString() + Roll_count.toString()
@@ -138,7 +152,18 @@ class Playing : AppCompatActivity() {
         }
 
         Done.setOnClickListener {
-            Change_Player.check(Table_list)
+
+            Roll_count = 2
+            times.text = "남은 기회 : $Roll_count"
+            if(!next) {
+                player = Player2
+                next = true
+            }
+            else {
+                player = Player1
+                next = false
+            }
+            Change_Player.change(_player,player,Table_list)
         }
 
     }
