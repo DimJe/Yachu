@@ -34,81 +34,117 @@
             android:weightSum="6">
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Ace"
-                android:layout_weight="1">
-
-                <TextView android:text="Ace" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="0">
 
                 <TextView
-                    android:id="@+id/ddd"
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Ace"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Deuces"
-                android:layout_weight="1">
-
-                <TextView android:text="Deuces" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="1">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Deuces"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Threes"
-                android:layout_weight="1">
-
-                <TextView android:text="Threes" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="2">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Threes"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Fours"
-                android:layout_weight="1">
-
-                <TextView android:text="Fours" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="3">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Fours"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Fives"
-                android:layout_weight="1">
-
-                <TextView android:text="Fives" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="4">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Fives"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Sixes"
-                android:layout_weight="1">
-
-                <TextView android:text="Sixes" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="5">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Sixes"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
@@ -122,83 +158,116 @@
             android:weightSum="6">
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Choice"
-                android:layout_weight="1">
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="6">
 
                 <TextView
                     android:text="Choice"
                     android:textSize="15dp" />
 
                 <TextView
-                    android:gravity="right"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
                     android:text="50"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
+
+            </TableRow>
+
+            <TableRow
+                android:id="@+id/Four_of_a_kind"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="7">
+
+                <TextView
+                    android:text="4 of a kind"
                     android:textSize="15dp" />
 
-            </TableRow>
-
-            <TableRow
-                android:background="#ffffff"
-                android:id="@+id/Four_of_a_kind"
-                android:layout_weight="1">
-
-                <TextView android:text="4 of a kind" />
-
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Full_House"
-                android:layout_weight="1">
-
-                <TextView android:text="Full House" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="8">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Full House"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/S_Straight"
-                android:layout_weight="1">
-
-                <TextView android:text="S_Straight" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="9">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="S_Straight"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/L_Straight"
-                android:layout_weight="1">
-
-                <TextView android:text="L_Straight" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="10">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="L_Straight"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
             <TableRow
-                android:background="#ffffff"
                 android:id="@+id/Yacht"
-                android:layout_weight="1">
-
-                <TextView android:text="Yacht" />
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:tag="11">
 
                 <TextView
-                    android:gravity="right"
-                    android:text="two" />
+                    android:text="Yacht"
+                    android:textSize="15dp" />
+
+                <TextView
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:text="two"
+                    android:textSize="15dp"
+                    android:textStyle="bold" />
 
             </TableRow>
 
