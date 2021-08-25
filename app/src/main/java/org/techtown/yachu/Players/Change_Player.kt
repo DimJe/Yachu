@@ -1,6 +1,7 @@
 package org.techtown.yachu.Players
 
 import android.content.Context
+import android.graphics.Color
 import android.widget.ImageView
 import android.widget.TableRow
 import android.widget.TextView
@@ -16,39 +17,51 @@ class Change_Player {
 
             text = table[0].getChildAt(1) as TextView
             text.text = player.Ace.toString()
+            if(player.fixed_point[0]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[1].getChildAt(1) as TextView
             text.text = player.Deuces.toString()
+            if(player.fixed_point[1]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[2].getChildAt(1) as TextView
             text.text = player.Threes.toString()
+            if(player.fixed_point[2]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[3].getChildAt(1) as TextView
             text.text = player.Fours.toString()
+            if(player.fixed_point[3]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[4].getChildAt(1) as TextView
             text.text = player.Fives.toString()
+            if(player.fixed_point[4]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[5].getChildAt(1) as TextView
             text.text = player.Sixes.toString()
+            if(player.fixed_point[5]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[6].getChildAt(1) as TextView
             text.text = player.Choice.toString()
+            if(player.fixed_point[6]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[7].getChildAt(1) as TextView
             text.text = player._4_of_a_kind.toString()
+            if(player.fixed_point[7]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[8].getChildAt(1) as TextView
             text.text = player.Full_House.toString()
+            if(player.fixed_point[8]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[9].getChildAt(1) as TextView
             text.text = player.S_straight.toString()
+            if(player.fixed_point[9]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[10].getChildAt(1) as TextView
             text.text = player.L_straight.toString()
+            if(player.fixed_point[10]) text.setTextColor(Color.rgb(255,0,0,))
 
             text = table[11].getChildAt(1) as TextView
             text.text = player.Yacht.toString()
+            if(player.fixed_point[11]) text.setTextColor(Color.rgb(255,0,0,))
 
             for (i in ImageList){
                 i.setImageDrawable(null)

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Yachu">
-        <activity android:name=".Playing"></activity>
+        <activity android:name=".Result"></activity>
+        <activity android:name=".Playing" />
         <activity android:name=".Player_setting" />
         <activity android:name=".Introduce_rule" />
         <activity android:name=".random_dice" />

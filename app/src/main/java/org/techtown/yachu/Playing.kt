@@ -19,8 +19,8 @@ class Playing : AppCompatActivity() {
     val TAG: String = "로그"
     lateinit var ReRoll: Button
 
-    lateinit var  player : Player
-    var clicked_row : TableRow? = null
+    lateinit var player: Player
+    var clicked_row: TableRow? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,15 +28,15 @@ class Playing : AppCompatActivity() {
 
         Log.d(TAG, "onCreate: called")
 
-        val Player1_Name: String? = if(intent.getStringExtra("player1")=="")  "Player1"
-                                    else intent.getStringExtra("player1")
-        val Player2_Name: String? = if(intent.getStringExtra("player2")=="")  "Player2"
-                                    else intent.getStringExtra("player2")
+        val Player1_Name: String? = if (intent.getStringExtra("player1") == "") "Player1"
+        else intent.getStringExtra("player1")
+        val Player2_Name: String? = if (intent.getStringExtra("player2") == "") "Player2"
+        else intent.getStringExtra("player2")
 
         var Player1 = Player(Player1_Name!!)
         var Player2 = Player(Player2_Name!!)
         player = Player1
-        var next : Boolean = false
+        var next: Boolean = false
 
         val _player: TextView = findViewById(R.id.Player)
         val times: TextView = findViewById(R.id.time)
@@ -81,29 +81,37 @@ class Playing : AppCompatActivity() {
             L_Straight,
             Yacht
         )
-        for(i in Table_list){
-            i.setOnClickListener {
-                if(clicked_row==null){
-                    i.setBackgroundColor(Color.rgb(142,142,142))
-                    clicked_row = i
-                }
-                else if(clicked_row==i) {
-                    i.setBackgroundColor(Color.rgb(255,255,255))
+        for (i in 0..11) {
+            Table_list[i].setOnClickListener {
+                if (player.fixed_point[i]) {
+                    if (clicked_row != null) clicked_row!!.setBackgroundColor(
+                        Color.rgb(
+                            255,
+                            255,
+                            255
+                        )
+                    )
+                    return@setOnClickListener
+                } else if (clicked_row == null) {
+                    Table_list[i].setBackgroundColor(Color.rgb(142, 142, 142))
+                    clicked_row = Table_list[i]
+                } else if (clicked_row == Table_list[i]) {
+                    Table_list[i].setBackgroundColor(Color.rgb(255, 255, 255))
                     clicked_row = null
-                }
-                else{
-                    clicked_row!!.setBackgroundColor(Color.rgb(255,255,255))
-                    i.setBackgroundColor(Color.rgb(142,142,142))
-                    clicked_row = i
+                } else {
+                    clicked_row!!.setBackgroundColor(Color.rgb(255, 255, 255))
+                    Table_list[i].setBackgroundColor(Color.rgb(142, 142, 142))
+                    clicked_row = Table_list[i]
                 }
             }
         }
 
         ReRoll = findViewById(R.id.ReRoll)
         val Done: Button = findViewById(R.id.Done)
-        Change_Player.change(_player,player,Table_list,ImageView_list)
+        Change_Player.change(_player, player, Table_list, ImageView_list)
 
         var Roll_count: Int = 2
+        var Done_count: Int = 0
         times.text = times.text.toString() + Roll_count.toString()
 
         if (turn) _player.text = Player1_Name
@@ -162,26 +170,32 @@ class Playing : AppCompatActivity() {
 
         Done.setOnClickListener {
 
-            if(clicked_row==null){
+            if (clicked_row == null) {
                 Toast.makeText(this, "등록 할 점수를 선택해주세요", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
-            if(Roll_count==2) {
+            if (Roll_count == 2) {
                 Toast.makeText(this, "주사위를 먼저 돌려주세요", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
             }
             Roll_count = 2
             times.text = "남은 기회 : $Roll_count"
+            Done_count++
             player.set(clicked_row!!)
-            if(!next) {
+
+            if (Done_count == 12) {
+                val intent = Intent(this, Result::class.java)
+                startActivity(intent)
+            }
+            if (!next) {
                 player = Player2
                 next = true
-            }
-            else {
+            } else {
                 player = Player1
                 next = false
             }
-            Change_Player.change(_player,player,Table_list,ImageView_list)
+            Change_Player.change(_player, player, Table_list, ImageView_list)
+            clicked_row = null
         }
 
     }
@@ -240,7 +254,7 @@ class Playing : AppCompatActivity() {
                 }
             }
         }
-        Change_Player.cal(arr!!,Table_list,player)
+        Change_Player.cal(arr!!, Table_list, player)
     }
 
 
@@ -252,6 +266,9 @@ class Playing : AppCompatActivity() {
     override fun onRestart() {
         super.onRestart()
         Log.d(TAG, "onRestart: called")
+        for (i in 0..11) {
+            Table_list[i].isEnabled = !player.fixed_point[i]
+        }
     }
 
 }
