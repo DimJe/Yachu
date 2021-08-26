@@ -3,12 +3,14 @@ package org.techtown.yachu.Players
 import android.graphics.Color
 import android.widget.TableRow
 import android.widget.TextView
+import java.io.Serializable
 
-class Player {
+class Player : Serializable {
     constructor(name: String) {
         this.name = name
     }
 
+    private final val serialVersionUID : Long = 1L
     val name: String
     var Ace = 0
     var Deuces = 0
@@ -22,6 +24,7 @@ class Player {
     var S_straight = 0
     var L_straight = 0
     var Yacht = 0
+    var Bonus = 0
     var total = 0
 
     val fixed_point = BooleanArray(12) { false }
@@ -83,8 +86,16 @@ class Player {
     }
 
 
-    fun sum() {
+    fun sum() : Int {
         total =
             Ace + Deuces + Threes + Fours + Fives + Sixes + Choice + _4_of_a_kind + Full_House + S_straight + L_straight + Yacht
+        return total
+    }
+    fun bonus() : Int{
+        if(Ace+Deuces+Threes+Fours+Fives+Sixes>=63){
+            Bonus = 35
+            return 35
+        }
+        else return 0
     }
 }

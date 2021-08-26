@@ -183,9 +183,16 @@ class Playing : AppCompatActivity() {
             Done_count++
             player.set(clicked_row!!)
 
-            if (Done_count == 12) {
+            player.arr.forEach {
+                Log.d(TAG, "onCreate: $it")
+            }
+            
+            if (Done_count == 24) {
                 val intent = Intent(this, Result::class.java)
+                intent.putExtra("player1",Player1)
+                intent.putExtra("player2",Player2)
                 startActivity(intent)
+                finish()
             }
             if (!next) {
                 player = Player2
