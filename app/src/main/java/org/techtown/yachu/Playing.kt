@@ -183,9 +183,6 @@ class Playing : AppCompatActivity() {
             Done_count++
             player.set(clicked_row!!)
 
-            player.arr.forEach {
-                Log.d(TAG, "onCreate: $it")
-            }
             
             if (Done_count == 24) {
                 val intent = Intent(this, Result::class.java)
