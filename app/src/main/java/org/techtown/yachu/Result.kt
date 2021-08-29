@@ -23,6 +23,11 @@ class Result : AppCompatActivity() {
         (Player1_layout.getChildAt(2) as TextView).text = player1.bonus().toString()
         (Player1_layout.getChildAt(3) as TextView).text = (player1.total + player1.Bonus).toString()
 
+        (Player2_layout.getChildAt(0) as TextView).text = player2.name
+        (Player2_layout.getChildAt(1) as TextView).text = player2.sum().toString()
+        (Player2_layout.getChildAt(2) as TextView).text = player2.bonus().toString()
+        (Player2_layout.getChildAt(3) as TextView).text = (player2.total + player2.Bonus).toString()
+
 
     }
 }

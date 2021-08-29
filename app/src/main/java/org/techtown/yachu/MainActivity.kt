@@ -17,7 +17,6 @@ class MainActivity : AppCompatActivity() {
         start.setOnClickListener {
             Log.d(TAG, "onCreate: start-clicked")
             val intent = Intent(this,Introduce_rule::class.java)
-//            startActivityForResult(intent,200)
             startActivity(intent)
             finish()
         }
@@ -25,12 +24,5 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        var arr = data?.getIntegerArrayListExtra("arr")
-//        for (i in arr!!){
-//            Log.d(TAG, "onActivityResult: $i")
-//
-//        }
-//        super.onActivityResult(requestCode, resultCode, data)
-//    }
+
 }

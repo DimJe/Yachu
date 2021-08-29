@@ -111,7 +111,7 @@ class Playing : AppCompatActivity() {
         Change_Player.change(_player, player, Table_list, ImageView_list)
 
         var Roll_count: Int = 2
-        var Done_count: Int = 0
+        var Done_count: Int = 22
         times.text = times.text.toString() + Roll_count.toString()
 
         if (turn) _player.text = Player1_Name
@@ -190,6 +190,7 @@ class Playing : AppCompatActivity() {
                 intent.putExtra("player2",Player2)
                 startActivity(intent)
                 finish()
+                return@setOnClickListener
             }
             if (!next) {
                 player = Player2
