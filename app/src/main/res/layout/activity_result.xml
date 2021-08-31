@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Result"
-    android:weightSum="5"
     android:orientation="vertical"
-    >
+    android:weightSum="5"
+    tools:context=".Result">
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -21,29 +21,34 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:weightSum="4">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:layout_weight="1"/>
+                android:layout_weight="1" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="점수 합"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:text="점수 합" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="Bonus"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:text="Bonus" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:text="Total"
+                android:layout_weight="1"
                 android:gravity="center"
-                android:layout_weight="1"/>
+                android:text="Total" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Player1"
             android:layout_width="0dp"
@@ -51,27 +56,32 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:weightSum="4">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
         </LinearLayout>
+
         <LinearLayout
             android:id="@+id/Player2"
             android:layout_width="0dp"
@@ -79,29 +89,70 @@
             android:layout_weight="1"
             android:orientation="vertical"
             android:weightSum="4">
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="0dp"
-                android:gravity="center"
-                android:layout_weight="1"/>
+                android:layout_weight="1"
+                android:gravity="center" />
         </LinearLayout>
 
+    </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="승자는 누구 입니다!" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="다시하기" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="종료하기" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="등록하기" />
     </LinearLayout>
 
 </LinearLayout>
