@@ -15,6 +15,13 @@
         android:text="전송"
         android:background="#ffffff"
         />
+    <Button
+        android:id="@+id/ranking"
+        android:layout_width="150dp"
+        android:layout_height="150dp"
+        android:text="ranking"
+        android:background="#ffffff"
+        />
 
 
 
