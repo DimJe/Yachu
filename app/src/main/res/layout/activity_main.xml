@@ -4,25 +4,59 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="#000000"
+    android:orientation="vertical"
+    android:weightSum="5"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/start"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="전송"
-        android:background="#ffffff"
-        />
-    <Button
-        android:id="@+id/ranking"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
-        android:text="ranking"
-        android:background="#ffffff"
-        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4"
+        android:gravity="center|top"
+        android:orientation="vertical">
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="100dp"
+            android:background="@drawable/white_round"
+            android:padding="30dp"
+            android:text="Play the Yacht!"
+            android:textColor="#000000"
+            android:textSize="40dp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/start"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:text="시작"
+            android:textColor="#000000" />
+
+        <Button
+            android:id="@+id/ranking"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_margin="15dp"
+            android:layout_weight="1"
+            android:background="#ffffff"
+            android:text="ranking"
+            android:textColor="#000000" />
+
+    </LinearLayout>
 
 
 </LinearLayout>

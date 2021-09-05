@@ -7,10 +7,12 @@ import android.util.Log
 import android.widget.Button
 import android.widget.LinearLayout
 import android.widget.TextView
+import android.widget.Toast
 import androidx.core.view.children
 import androidx.room.Room
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
 import kotlinx.coroutines.launch
 import org.techtown.yachu.DataBase.User
 import org.techtown.yachu.DataBase.UserDatabase
@@ -62,10 +64,22 @@ class Result : AppCompatActivity() {
             val current : LocalDateTime = LocalDateTime.now()
             val formatter = DateTimeFormatter.ISO_DATE
             val formatted = current.format(formatter)
-            CoroutineScope(Dispatchers.IO).launch {
-                db.userDao().insert(User(name,score,formatted))
+            CoroutineScope(Dispatchers.Main).launch {
+                val users = CoroutineScope(Dispatchers.IO).async {
+                    db.userDao().getAll()
+                }.await()
+                CoroutineScope(Dispatchers.IO).launch {
+                    if(users.size==10){
+                        users.sortedByDescending { user: User -> score }
+                        db.userDao().delete(users[9])
+                        db.userDao().insert(User(name,score,formatted))
+                        Log.d(TAG, "db - deleted() ")
+                    }
+                    else db.userDao().insert(User(name,score,formatted))
+                }
             }
             Log.d(TAG, "db-insert() ,$score , $formatted")
+            Toast.makeText(this, "등록되었습니다.", Toast.LENGTH_SHORT).show()
         }
 
         replay.setOnClickListener {

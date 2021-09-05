@@ -66,6 +66,8 @@ class Playing : AppCompatActivity() {
         val L_Straight: TableRow = findViewById(R.id.L_Straight)
         val Yacht: TableRow = findViewById(R.id.Yacht)
 
+        var Roll_count: Int = 2
+        var Done_count: Int = 22
 
         Table_list = arrayListOf<TableRow>(
             Ace,
@@ -83,6 +85,7 @@ class Playing : AppCompatActivity() {
         )
         for (i in 0..11) {
             Table_list[i].setOnClickListener {
+                if(Roll_count==2) return@setOnClickListener
                 if (player.fixed_point[i]) {
                     if (clicked_row != null) clicked_row!!.setBackgroundColor(
                         Color.rgb(
@@ -110,8 +113,6 @@ class Playing : AppCompatActivity() {
         val Done: Button = findViewById(R.id.Done)
         Change_Player.change(_player, player, Table_list, ImageView_list)
 
-        var Roll_count: Int = 2
-        var Done_count: Int = 22
         times.text = times.text.toString() + Roll_count.toString()
 
         if (turn) _player.text = Player1_Name
