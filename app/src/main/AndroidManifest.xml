@@ -9,7 +9,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Yachu">
-        <activity android:name=".Result"></activity>
+        <activity android:name=".Ranking"
+                  android:theme="@android:style/Theme.Dialog"/>
+        <activity android:name=".Result" />
         <activity android:name=".Playing" />
         <activity android:name=".Player_setting" />
         <activity android:name=".Introduce_rule" />

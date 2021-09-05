@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import kotlinx.coroutines.*
+import org.techtown.yachu.DataBase.User
 import org.techtown.yachu.DataBase.UserDatabase
 
 class MainActivity : AppCompatActivity() {
@@ -28,10 +29,15 @@ class MainActivity : AppCompatActivity() {
         rank.setOnClickListener {
             Log.d(TAG, "ranking - clicked()")
             CoroutineScope(Dispatchers.Main).launch {
-                val users = CoroutineScope(Dispatchers.IO).async {
+                var users = CoroutineScope(Dispatchers.IO).async {
                     db.userDao().getAll()
                 }.await()
-                for (user in users) Log.d(TAG, "${user.name}  ${user.score}  ${user.date}")
+                CoroutineScope(Dispatchers.IO).launch { 
+                    if (users.isNotEmpty()){
+                        val list =  users.sortedByDescending { it.score }
+                        for (user in list) Log.d(TAG, "${user.name}  ${user.score}  ${user.date}")
+                    }
+                }
             }
         }
 

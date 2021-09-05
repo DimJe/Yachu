@@ -70,8 +70,8 @@ class Result : AppCompatActivity() {
                 }.await()
                 CoroutineScope(Dispatchers.IO).launch {
                     if(users.size==10){
-                        users.sortedByDescending { user: User -> score }
-                        db.userDao().delete(users[9])
+                        val list = users.sortedByDescending { it.score }
+                        db.userDao().delete(list[9])
                         db.userDao().insert(User(name,score,formatted))
                         Log.d(TAG, "db - deleted() ")
                     }
