@@ -27,18 +27,20 @@ class MainActivity : AppCompatActivity() {
 
         val rank : Button = findViewById(R.id.ranking)
         rank.setOnClickListener {
+            val intent = Intent(this,Ranking::class.java)
+            startActivity(intent)
             Log.d(TAG, "ranking - clicked()")
-            CoroutineScope(Dispatchers.Main).launch {
-                var users = CoroutineScope(Dispatchers.IO).async {
-                    db.userDao().getAll()
-                }.await()
-                CoroutineScope(Dispatchers.IO).launch { 
-                    if (users.isNotEmpty()){
-                        val list =  users.sortedByDescending { it.score }
-                        for (user in list) Log.d(TAG, "${user.name}  ${user.score}  ${user.date}")
-                    }
-                }
-            }
+//            CoroutineScope(Dispatchers.Main).launch {
+//                var users = CoroutineScope(Dispatchers.IO).async {
+//                    db.userDao().getAll()
+//                }.await()
+//                CoroutineScope(Dispatchers.IO).launch {
+//                    if (users.isNotEmpty()){
+//                        val list =  users.sortedByDescending { it.score }
+//                        for (user in list) Log.d(TAG, "${user.name}  ${user.score}  ${user.date}")
+//                    }
+//                }
+//            }
         }
 
     }

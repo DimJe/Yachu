@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Yachu">
         <activity android:name=".Ranking"
-                  android:theme="@android:style/Theme.Dialog"/>
+                  android:theme="@style/Theme.AppCompat.DayNight.Dialog"/>
         <activity android:name=".Result" />
         <activity android:name=".Playing" />
         <activity android:name=".Player_setting" />
