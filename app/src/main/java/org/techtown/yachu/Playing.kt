@@ -67,7 +67,7 @@ class Playing : AppCompatActivity() {
         val Yacht: TableRow = findViewById(R.id.Yacht)
 
         var Roll_count: Int = 2
-        var Done_count: Int = 22
+        var Done_count: Int = 0
 
         Table_list = arrayListOf<TableRow>(
             Ace,
